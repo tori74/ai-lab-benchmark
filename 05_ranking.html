@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:#0a0a0a; color:#fff; width:1280px; height:720px; overflow:hidden; position:relative; }
+body::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at top right, rgba(202,138,4,0.08) 0%, transparent 50%); }
+.topbar { position:absolute; top:28px; left:0; right:0; padding:0 56px; display:flex; justify-content:space-between; align-items:center; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6b7280; font-weight:500; }
+.brand { display:flex; align-items:center; gap:18px; }
+.brand .logo { font-weight:800; font-size:16px; color:#fff; }
+.brand .divider { width:1px; height:18px; background:#374151; }
+
+.content { position:absolute; top:90px; left:56px; right:56px; bottom:90px; display:grid; grid-template-columns: 1fr 1fr; gap:50px; }
+
+h1 { font-size:46px; font-weight:800; line-height:1.0; letter-spacing:-0.03em; margin-bottom:14px; }
+h1 .accent { color:#facc15; }
+.lead { font-size:15px; color:#9ca3af; line-height:1.5; margin-bottom:28px; }
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #facc15;
+  margin-bottom: 14px;
+}
+.section-title.danger { color: #ef4444; }
+
+.ranks { display: flex; flex-direction: column; gap: 10px; }
+.rank {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+.rank.gold { background: linear-gradient(90deg, rgba(250,204,21,0.08), rgba(250,204,21,0.02)); border-color: rgba(250,204,21,0.25); }
+.rank.silver { background: linear-gradient(90deg, rgba(203,213,225,0.05), rgba(203,213,225,0.01)); border-color: rgba(203,213,225,0.18); }
+.rank.bronze { background: linear-gradient(90deg, rgba(180,83,9,0.06), rgba(180,83,9,0.01)); border-color: rgba(180,83,9,0.2); }
+.medal {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 800;
+  flex-shrink: 0;
+}
+.medal.gold { background: linear-gradient(135deg, #facc15, #ca8a04); color: #0a0a0a; }
+.medal.silver { background: linear-gradient(135deg, #e5e7eb, #9ca3af); color: #0a0a0a; }
+.medal.bronze { background: linear-gradient(135deg, #d97706, #92400e); color: #fff; }
+.medal.normal { background: rgba(255,255,255,0.06); color: #9ca3af; }
+.rank-name { flex: 1; font-size: 16px; font-weight: 600; }
+.rank-score { font-size: 22px; font-weight: 800; color: #facc15; }
+.rank-score .max { font-size: 12px; color: #6b7280; font-weight: 500; }
+
+.danger-list { display: flex; flex-direction: column; gap: 10px; }
+.danger-item {
+  padding: 12px 16px;
+  background: rgba(239,68,68,0.05);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 10px;
+}
+.danger-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+.danger-icon { color: #ef4444; font-weight: 800; font-size: 14px; }
+.danger-reason { font-size: 12px; color: #9ca3af; line-height: 1.4; }
+
+.bottombar { position:absolute; bottom:32px; left:56px; right:56px; display:flex; justify-content:space-between; align-items:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); font-size:13px; color:#6b7280; letter-spacing:0.08em; font-weight:500; }
+.bottombar .tagline { color:#facc15; letter-spacing:0.04em; font-weight:600; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="logo">AI LAB</span>
+    <span class="divider"></span>
+    <span>05 · итоговый рейтинг</span>
+  </div>
+  <div>топ-5 и кого нельзя в клиентский чат</div>
+</div>
+
+<div class="content">
+  <div>
+    <h1>Топ-5 моделей<br>для <span class="accent">финансовых задач</span></h1>
+    <p class="lead">Лучшие по совокупности 9 задач. Кому можно доверить расчёты, аналитику и общение с клиентами.</p>
+
+    <div class="section-title">кому можно доверить расчёты, аналитику и общение с клиентами</div>
+    <div class="ranks">
+      <div class="rank gold">
+        <div class="medal gold">1</div>
+        <div class="rank-name">DeepSeek V4 Pro</div>
+        <div class="rank-score">4.9<span class="max">/5</span></div>
+      </div>
+      <div class="rank silver">
+        <div class="medal silver">2</div>
+        <div class="rank-name">ChatGPT 5.5</div>
+        <div class="rank-score">4.7<span class="max">/5</span></div>
+      </div>
+      <div class="rank bronze">
+        <div class="medal bronze">3</div>
+        <div class="rank-name">Kimi K2.6</div>
+        <div class="rank-score">4.7<span class="max">/5</span></div>
+      </div>
+      <div class="rank">
+        <div class="medal normal">4</div>
+        <div class="rank-name">Grok 4.3</div>
+        <div class="rank-score">4.6<span class="max">/5</span></div>
+      </div>
+      <div class="rank">
+        <div class="medal normal">5</div>
+        <div class="rank-name">Gemini 3.1 Pro Preview</div>
+        <div class="rank-score">4.5<span class="max">/5</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div style="height:120px"></div>
+    <div class="section-title danger">кого нельзя пускать в клиентский чат</div>
+    <div class="danger-list">
+      <div class="danger-item">
+        <div class="danger-name"><span class="danger-icon">✕</span>GigaChat</div>
+        <div class="danger-reason">Фундаментальные ошибки в расчётах. Результат в 2 раза меньше реального. Аномалии называет нормой</div>
+      </div>
+      <div class="danger-item">
+        <div class="danger-name"><span class="danger-icon">✕</span>Hermes 4 70B</div>
+        <div class="danger-reason">Галлюцинации с уверенным тоном. Смешивает русский и английский в одном предложении. Reasoning виден в чате</div>
+      </div>
+      <div class="danger-item">
+        <div class="danger-name"><span class="danger-icon">✕</span>Llama 4 Scout</div>
+        <div class="danger-reason">Нет этических границ. Прямо рекомендует рискованные инструменты по запросу. Для эксперта в чате — табу</div>
+      </div>
+      <div class="danger-item">
+        <div class="danger-name"><span class="danger-icon">!</span>Mistral Large</div>
+        <div class="danger-reason">Галлюцинирует правдоподобными таблицами. На вопросе с актуальными цифрами выдала фейковую динамику с придуманными датами</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottombar">
+  <div>усреднённая оценка по 9 задачам бенчмарка</div>
+  <div class="tagline">Топ-3 = безопасно для финансовой темы клуба</div>
+</div>
+
+</body>
+</html>

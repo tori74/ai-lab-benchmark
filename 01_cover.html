@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Subtle gradient background */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse at top right, rgba(202, 138, 4, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+}
+
+/* Top bar */
+.topbar {
+  position: absolute;
+  top: 28px; left: 0; right: 0;
+  padding: 0 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7280;
+  font-weight: 500;
+}
+.brand { display: flex; align-items: center; gap: 18px; }
+.brand .logo {
+  font-weight: 800; font-size: 16px; color: #fff;
+  letter-spacing: 0.05em;
+}
+.brand .divider { width: 1px; height: 18px; background: #374151; }
+
+/* Main content */
+.content {
+  position: absolute;
+  top: 110px; left: 56px; right: 56px;
+}
+h1 {
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+}
+h1 .accent { color: #facc15; }
+.subtitle {
+  font-size: 19px;
+  color: #9ca3af;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 620px;
+  margin-bottom: 0;
+}
+
+/* Models grid */
+.models-grid {
+  position: absolute;
+  bottom: 110px; left: 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 14px;
+  width: 720px;
+}
+.model {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #d1d5db;
+}
+.model .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #facc15;
+  flex-shrink: 0;
+}
+
+/* Number badge */
+.number-badge {
+  position: absolute;
+  top: 110px; right: 56px;
+  width: 280px;
+  text-align: right;
+}
+.number {
+  font-size: 220px;
+  font-weight: 900;
+  line-height: 0.85;
+  color: #facc15;
+  letter-spacing: -0.05em;
+}
+.number-label {
+  font-size: 14px;
+  color: #9ca3af;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* Bottom bar */
+.bottombar {
+  position: absolute;
+  bottom: 32px; left: 56px; right: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  color: #6b7280;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+.bottombar .tagline {
+  color: #facc15;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="logo">AI LAB</span>
+    <span class="divider"></span>
+    <span>лаборатория сравнения больших языковых моделей</span>
+  </div>
+  <div>версия 1.0 · май 2026</div>
+</div>
+
+<div class="content">
+  <h1>Один вопрос —<br><span class="accent">одиннадцать ответов</span></h1>
+  <p class="subtitle">
+    Telegram-группа, где каждая тема форума отвечает отдельной LLM. Личный стенд для сравнения моделей под рабочие задачи — финансы, аналитика, креатив.
+  </p>
+</div>
+
+<div class="number-badge">
+  <div class="number">11</div>
+  <div class="number-label">моделей в одной группе</div>
+</div>
+
+<div class="models-grid">
+  <div class="model"><span class="dot"></span>ChatGPT 5.5</div>
+  <div class="model"><span class="dot"></span>Gemini 3.1 Pro</div>
+  <div class="model"><span class="dot"></span>DeepSeek V4 Pro</div>
+  <div class="model"><span class="dot"></span>Qwen 3.7 Max</div>
+  <div class="model"><span class="dot"></span>Kimi K2.6</div>
+  <div class="model"><span class="dot"></span>Hermes 4 70B</div>
+  <div class="model"><span class="dot"></span>Grok 4.3</div>
+  <div class="model"><span class="dot"></span>Mistral Large</div>
+  <div class="model"><span class="dot"></span>Llama 4 Scout</div>
+  <div class="model"><span class="dot"></span>GigaChat</div>
+  <div class="model"><span class="dot"></span>YandexGPT Pro</div>
+</div>
+
+<div class="bottombar">
+  <div>персональный бенчмарк-стенд</div>
+  <div class="tagline">9 задач · 99 ответов · 3 дня сборки</div>
+</div>
+
+</body>
+</html>

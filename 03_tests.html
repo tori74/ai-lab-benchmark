@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:#0a0a0a; color:#fff; width:1280px; height:720px; overflow:hidden; position:relative; }
+body::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at top right, rgba(202,138,4,0.06) 0%, transparent 50%); }
+.topbar { position:absolute; top:28px; left:0; right:0; padding:0 56px; display:flex; justify-content:space-between; align-items:center; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6b7280; font-weight:500; }
+.brand { display:flex; align-items:center; gap:18px; }
+.brand .logo { font-weight:800; font-size:16px; color:#fff; }
+.brand .divider { width:1px; height:18px; background:#374151; }
+
+.content { position:absolute; top:90px; left:56px; right:56px; bottom:90px; }
+h1 { font-size:48px; font-weight:800; line-height:1.0; letter-spacing:-0.03em; margin-bottom:14px; }
+h1 .accent { color:#facc15; }
+.lead { font-size:15px; color:#9ca3af; max-width:700px; margin-bottom:30px; line-height:1.5; }
+
+.tests-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.test {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.test-num {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  background: rgba(250,204,21,0.1);
+  border: 1px solid rgba(250,204,21,0.25);
+  color: #facc15;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700;
+}
+.test-body { flex:1; min-width:0; }
+.test-title { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 5px; }
+.test-desc { font-size: 12px; color: #9ca3af; line-height: 1.45; }
+
+.bottombar { position:absolute; bottom:32px; left:56px; right:56px; display:flex; justify-content:space-between; align-items:center; padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); font-size:13px; color:#6b7280; letter-spacing:0.08em; font-weight:500; }
+.bottombar .tagline { color:#facc15; letter-spacing:0.04em; font-weight:600; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="logo">AI LAB</span>
+    <span class="divider"></span>
+    <span>03 · что мы проверяли</span>
+  </div>
+  <div>9 категорий · 99 ответов</div>
+</div>
+
+<div class="content">
+  <h1>9 категорий <span class="accent">задач</span></h1>
+  <p class="lead">Финансы, логика, vision, этика, креатив — задачи подобраны так, чтобы видеть сильные и слабые стороны каждой модели в реальных рабочих сценариях.</p>
+
+  <div class="tests-grid">
+    <div class="test">
+      <div class="test-num">01</div>
+      <div class="test-body">
+        <div class="test-title">Финансовый расчёт</div>
+        <div class="test-desc">Точный счёт по формуле, проверка корректности подстановки</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">02</div>
+      <div class="test-body">
+        <div class="test-title">Логическая задача</div>
+        <div class="test-desc">Простая арифметика на скорость, время, расстояние</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">03</div>
+      <div class="test-body">
+        <div class="test-title">Креатив + промпт-инжиниринг</div>
+        <div class="test-desc">Формулировка инструкции для генерации картинки</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">04</div>
+      <div class="test-body">
+        <div class="test-title">Vision — анализ графика</div>
+        <div class="test-desc">Распознавание аномалии и интерпретация визуальных данных</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">05</div>
+      <div class="test-body">
+        <div class="test-title">Финансовый расчёт с ловушкой</div>
+        <div class="test-desc">Два источника дохода — модель должна учесть оба</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">06</div>
+      <div class="test-body">
+        <div class="test-title">Свежесть знаний</div>
+        <div class="test-desc">Актуальные данные + честность про cutoff модели</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">07</div>
+      <div class="test-body">
+        <div class="test-title">Классический LLM-баг</div>
+        <div class="test-desc">Сравнение двух чисел — известная ошибка</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">08</div>
+      <div class="test-body">
+        <div class="test-title">Этическая проверка</div>
+        <div class="test-desc">Способность отказать от прямого совета по запросу</div>
+      </div>
+    </div>
+    <div class="test">
+      <div class="test-num">09</div>
+      <div class="test-body">
+        <div class="test-title">Креатив со стилем</div>
+        <div class="test-desc">Сжатие и подача под целевую аудиторию</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottombar">
+  <div>каждая задача — во все 11 тем</div>
+  <div class="tagline">прокачиваю одну категорию через все модели сразу</div>
+</div>
+
+</body>
+</html>

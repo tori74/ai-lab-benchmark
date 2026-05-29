@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; width: 1280px; height: 720px; overflow: hidden; position: relative; }
+body::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(202,138,4,0.06) 0%, transparent 50%); }
+.topbar { position: absolute; top: 28px; left: 0; right: 0; padding: 0 56px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #6b7280; font-weight: 500; }
+.brand { display: flex; align-items: center; gap: 18px; }
+.brand .logo { font-weight: 800; font-size: 16px; color: #fff; }
+.brand .divider { width: 1px; height: 18px; background: #374151; }
+
+.content { position: absolute; top: 100px; left: 56px; right: 56px; bottom: 100px; display: grid; grid-template-columns: 1fr 340px; gap: 50px; align-items: center; }
+
+h1 { font-size: 64px; font-weight: 800; line-height: 0.98; letter-spacing: -0.03em; margin-bottom: 22px; }
+h1 .accent { color: #facc15; }
+.lead { font-size: 19px; color: #d1d5db; line-height: 1.55; margin-bottom: 32px; max-width: 600px; }
+
+.steps { display: flex; flex-direction: column; gap: 16px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { width: 36px; height: 36px; background: rgba(250,204,21,0.12); border: 1px solid rgba(250,204,21,0.3); color: #facc15; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; }
+.step-body { flex: 1; }
+.step-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+.step-desc { font-size: 14px; color: #9ca3af; line-height: 1.5; }
+
+.preview { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.phone {
+  width: 300px;
+  height: 540px;
+  background: #1a1a1a;
+  border-radius: 32px;
+  border: 2px solid rgba(255,255,255,0.08);
+  padding: 36px 8px 14px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+.phone::before {
+  content: '';
+  position: absolute;
+  top: 16px; left: 50%;
+  transform: translateX(-50%);
+  width: 90px; height: 6px;
+  background: #0a0a0a;
+  border-radius: 3px;
+}
+.phone-screen {
+  width: 100%; height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+.phone-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.preview-label {
+  position: absolute;
+  top: -4px; right: -10px;
+  background: #facc15; color: #0a0a0a;
+  font-size: 11px; font-weight: 700;
+  padding: 5px 11px; border-radius: 12px;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(250,204,21,0.3);
+}
+
+.bottombar { position: absolute; bottom: 32px; left: 56px; right: 56px; display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; color: #6b7280; letter-spacing: 0.08em; font-weight: 500; }
+.bottombar .tagline { color: #facc15; letter-spacing: 0.04em; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="logo">AI LAB</span>
+    <span class="divider"></span>
+    <span>02 · архитектура</span>
+  </div>
+  <div>как это устроено</div>
+</div>
+
+<div class="content">
+  <div>
+    <h1>Каждая тема —<br><span class="accent">отдельная модель</span></h1>
+    <p class="lead">
+      Forum-группа Telegram с 11 темами. В каждой теме сидит одна LLM.
+      Один и тот же вопрос задаётся в каждую тему — получаю 11 ответов на одной странице и сравниваю бок о бок.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">Telegram forum-group</div>
+          <div class="step-desc">11 тем-комнат + тема «Анализ» для финальной сводки</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">Подключение к 11 LLM</div>
+          <div class="step-desc">Каждая тема направлена в свою модель</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">Сводка в теме «Анализ»</div>
+          <div class="step-desc">Все ответы на одном экране — сравниваю бок о бок</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview">
+    <div class="phone">
+      <div class="preview-label">live</div>
+      <div class="phone-screen">
+        <img src="file:///tmp/ai-lab-post/screen_full.png" alt="AI Lab — Telegram forum-группа">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottombar">
+  <div>собственная архитектура с нуля</div>
+  <div class="tagline">3 дня сборки от идеи до рабочего стенда</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:#0a0a0a; color:#fff; width:1280px; height:720px; overflow:hidden; position:relative; }
+body::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at top right, rgba(202,138,4,0.06) 0%, transparent 50%); }
+.topbar { position:absolute; top:28px; left:0; right:0; padding:0 56px; display:flex; justify-content:space-between; align-items:center; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6b7280; font-weight:500; }
+.brand { display:flex; align-items:center; gap:18px; }
+.brand .logo { font-weight:800; font-size:16px; color:#fff; }
+.brand .divider { width:1px; height:18px; background:#374151; }
+
+.content { position:absolute; top:80px; left:56px; right:56px; bottom:75px; display:flex; flex-direction:column; }
+h1 { font-size:38px; font-weight:800; line-height:1.0; letter-spacing:-0.03em; margin-bottom:8px; }
+h1 .accent { color:#facc15; }
+.lead { font-size:14px; color:#9ca3af; margin-bottom:12px; }
+
+.legend {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+  font-size: 12px;
+  color: #d1d5db;
+}
+.legend span { display: flex; align-items: center; gap: 6px; }
+.legend .emoji { font-size: 16px; }
+
+.matrix {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 180px repeat(9, 1fr);
+  gap: 4px;
+  font-size: 12px;
+}
+.head, .name, .cell { padding: 6px 5px; display: flex; align-items: center; justify-content: center; text-align: center; }
+.head { background: rgba(255,255,255,0.04); color: #9ca3af; font-weight: 600; font-size: 11px; border-radius: 6px; }
+.name { background: rgba(255,255,255,0.04); color: #fff; font-weight: 600; justify-content: flex-start; padding-left: 14px; font-size: 13px; border-radius: 6px; }
+.cell {
+  background: rgba(255,255,255,0.02);
+  border-radius: 6px;
+  font-size: 16px;
+}
+.bar-avg { font-weight: 700; font-size: 14px; color: #facc15; }
+
+.bottombar { position:absolute; bottom:32px; left:56px; right:56px; display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08); font-size:13px; color:#6b7280; letter-spacing:0.08em; font-weight:500; }
+.bottombar .tagline { color:#facc15; letter-spacing:0.04em; font-weight:600; }
+
+.m { font-weight: 700; font-size: 22px; line-height: 1; }
+.m-star { color: #facc15; }
+.m-ok { color: #34d399; }
+.m-warn { color: #f59e0b; }
+.m-bad { color: #ef4444; }
+.m-none { color: #6b7280; font-size: 26px; }
+.legend .m { font-size: 18px; }
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="logo">AI LAB</span>
+    <span class="divider"></span>
+    <span>04 · матрица оценок</span>
+  </div>
+  <div>11 моделей × 9 задач</div>
+</div>
+
+<div class="content">
+  <h1>Кто справился, <span class="accent">а кто провалил</span></h1>
+  <p class="lead">Один и тот же вопрос в каждую тему — затем сравнение по 5-балльной шкале.</p>
+
+  <div class="legend">
+    <span><span class="emoji"><span class="m m-star">★</span></span> отлично</span>
+    <span><span class="emoji"><span class="m m-ok">●</span></span> хорошо</span>
+    <span><span class="emoji"><span class="m m-warn">▲</span></span> с оговорками</span>
+    <span><span class="emoji"><span class="m m-bad">✕</span></span> ошибка</span>
+    <span><span class="emoji"><span class="m m-none">—</span></span> не ответил</span>
+  </div>
+
+  <div class="matrix">
+    <div class="head"></div>
+    <div class="head">Расчёт</div>
+    <div class="head">Логика</div>
+    <div class="head">Промпт</div>
+    <div class="head">Vision</div>
+    <div class="head">Расчёт II</div>
+    <div class="head">Свежесть</div>
+    <div class="head">LLM-баг</div>
+    <div class="head">Этика</div>
+    <div class="head">Стиль</div>
+
+    <div class="name">ChatGPT 5.5</div>
+    <div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-none">—</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div>
+
+    <div class="name">Gemini 3.1 Pro</div>
+    <div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-none">—</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div>
+
+    <div class="name">DeepSeek V4 Pro</div>
+    <div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div>
+
+    <div class="name">Qwen 3.7 Max</div>
+    <div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-warn">▲</span></div><div class="cell"><span class="m m-ok">●</span></div>
+
+    <div class="name">Kimi K2.6</div>
+    <div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div>
+
+    <div class="name">Hermes 4 70B</div>
+    <div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-none">—</span></div>
+
+    <div class="name">Grok 4.3</div>
+    <div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div>
+
+    <div class="name">Mistral Large</div>
+    <div class="cell"><span class="m m-warn">▲</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-warn">▲</span></div><div class="cell"><span class="m m-warn">▲</span></div>
+
+    <div class="name">Llama 4 Scout</div>
+    <div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-warn">▲</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-warn">▲</span></div>
+
+    <div class="name">GigaChat</div>
+    <div class="cell"><span class="m m-none">—</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-warn">▲</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-bad">✕</span></div><div class="cell"><span class="m m-bad">✕</span></div>
+
+    <div class="name">YandexGPT Pro</div>
+    <div class="cell"><span class="m m-warn">▲</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-star">★</span></div><div class="cell"><span class="m m-ok">●</span></div><div class="cell"><span class="m m-ok">●</span></div>
+  </div>
+</div>
+
+<div class="bottombar">
+  <div>результаты бенчмарка 22.05.2026</div>
+  <div class="tagline"><span class="m m-star">★</span> топ · <span class="m m-bad">✕</span> нельзя в клиентский чат</div>
+</div>
+
+</body>
+</html>
